@@ -1,3 +1,6 @@
+// global variable for color of square
+let color = 'black';
+
 // function that populates the grid
 function createBoard(num) {
     let grid = document.querySelector('.grid')
@@ -8,10 +11,14 @@ function createBoard(num) {
     grid.style.gridTemplateColumns = `repeat(${num}, 1fr)`
     grid.style.gridTemplateRows = `repeat(${num}, 1fr)`
 
+    // create num by num grid
     for (let i = 0; i < num * num; i++) {
         let square = document.createElement('div');
+        // event listener to change color when mouse is over squares
+        square.addEventListener('mouseover', changeColor);
         square.style.backgroundColor = 'blue';
         grid.appendChild(square)
+        // grid.insertAdjacentElement('beforeend', square);
     }
 } 
 
@@ -24,4 +31,14 @@ function changeSize(userInput) {
     else {
         console.log('too many squares')
     }
+}
+
+// this function is actually being created num times: each changeColor function is focusing only on a singular div
+function changeColor() {
+    this.style.backgroundColor=color;
+}
+
+// function to change color of square when buttons are pressed
+function buttonColor(button) {
+    color = button;
 }
