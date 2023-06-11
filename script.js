@@ -16,7 +16,7 @@ function createBoard(num) {
         let square = document.createElement('div');
         // event listener to change color when mouse is over squares
         square.addEventListener('mouseover', changeColor);
-        square.style.backgroundColor = 'blue';
+        square.style.backgroundColor = 'white';
         grid.appendChild(square)
         // grid.insertAdjacentElement('beforeend', square);
     }
@@ -27,8 +27,7 @@ createBoard(16)
 function changeSize(userInput) {
     if (userInput >= 2 && userInput <= 100) {
         createBoard(userInput);
-    }
-    else {
+    } else {
         console.log('too many squares')
     }
 }
@@ -36,9 +35,22 @@ function changeSize(userInput) {
 // this function is actually being created num times: each changeColor function is focusing only on a singular div
 function changeColor() {
     this.style.backgroundColor=color;
+    // if (color == 'random') {
+    //     this.style.backgroundColor = hs1($(Math.random() * 360));
+    // } else {
+        
+    // }
+    
 }
 
 // function to change color of square when buttons are pressed
 function buttonColor(button) {
     color = button;
+}
+
+// function for reset button(basically resets board)
+function buttonReset() {
+    let grid = document.querySelector('.grid')
+    let squares = grid.querySelectorAll('div')
+    squares.forEach((div) => div.style.backgroundColor='white');
 }
