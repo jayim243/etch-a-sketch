@@ -1,5 +1,17 @@
 // global variable for color of square
 let color = 'black';
+// user can click to turn on/off coloring
+let click = true;
+document.querySelector('body').addEventListener('click', (event) => {
+    if (event.target.tagName != 'BUTTON'  && event.target.tagName != 'INPUT') {
+        click = !click;
+        if (click) {
+            document.querySelector('.mode').textContent = 'Color ON'
+        } else {
+            document.querySelector('.mode').textContent = 'Color OFF'
+        }
+    }
+})
 
 // function that populates the grid
 function createBoard(num) {
@@ -26,15 +38,18 @@ createBoard(16)
 // function that changes size of grid given valid user inputs
 function changeSize(userInput) {
     if (userInput >= 2 && userInput <= 100) {
+        document.querySelector('.error').style.display = 'none'
         createBoard(userInput);
     } else {
-        console.log('too many squares')
+        document.querySelector('.error').style.display = 'flex'
     }
 }
 
 // this function is actually being created num times: each changeColor function is focusing only on a singular div
 function changeColor() {
-    this.style.backgroundColor=color;
+    if (click) {
+        this.style.backgroundColor=color;
+    }
     // if (color == 'random') {
     //     this.style.backgroundColor = hs1($(Math.random() * 360));
     // } else {
@@ -54,3 +69,5 @@ function buttonReset() {
     let squares = grid.querySelectorAll('div')
     squares.forEach((div) => div.style.backgroundColor='white');
 }
+
+
