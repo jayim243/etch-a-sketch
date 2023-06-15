@@ -1,5 +1,6 @@
 // global variable for color of square
 let color = 'black';
+
 // user can click to turn on/off coloring
 let click = true;
 document.querySelector('body').addEventListener('click', (event) => {
@@ -7,8 +8,10 @@ document.querySelector('body').addEventListener('click', (event) => {
         click = !click;
         if (click) {
             document.querySelector('.mode').textContent = 'Color ON'
+            document.querySelector('.mode').style.color = 'rgb(198, 226, 43)'
         } else {
             document.querySelector('.mode').textContent = 'Color OFF'
+            document.querySelector('.mode').style.color = 'rgb(226, 43, 67)'
         }
     }
 })

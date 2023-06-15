@@ -8,29 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="content">
         <div class="title">
             <h1>Sketchpad</h1>
         </div>
         <div class="mode">Color ON</div>
-        <div class="content">
-            <div class="grid">
-            </div>
-            <div class="buttons">
-                <button onclick="buttonColor('black')">Black</button>
-                <button onclick="buttonColor('white')">Erase</button>
-                <!-- <button onclick="buttonColor('random')">Random</button> -->
-                <button onclick="buttonReset()">Reset</button>
-            </div>
-            <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)">
-            <button>Set Size</button>
-            <div class="error">Size must be between 2 and 100</div>
+        <div class="grid">
         </div>
+        <div class="buttons">
+            <button onclick="buttonColor('black')">Black</button>
+            <button onclick="buttonColor('white')">Eraser</button>
+            <!-- <button onclick="buttonColor('random')">Random</button> -->
+            <button onclick="buttonReset()">Reset</button>
+        </div>
+        <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)">
+        <button>Set Size</button>
+        <div class="error">Size must be between 2 and 100</div>
     </div>
-    
-    
-
-
     <script src="script.js">
     </script>
 </body>
