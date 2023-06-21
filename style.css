@@ -1,15 +1,12 @@
-.content {
+/* board and buttons will stay on screen even if adjusted */
+.container {
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: linear-gradient(rgb(0, 109, 199), rgb(190, 72, 160));
-    /* min-width: 300px;
-    min-height: 300px;
-    width: 60vw;
-    height: 60vw;
-    max-width: 600px;
-    max-height: 600px; */
-}
+  }
 
 
 /* title + coloring mode on/off */
@@ -21,6 +18,19 @@
     font-weight: 700;
     color: rgb(198, 226, 43);
 }
+
+/* grid, buttons, size */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+/* cursor changes when hovering over board */
+.grid:hover {
+    cursor:pointer
+}
+
 
 /* grid specifically */
 .grid {
@@ -39,4 +49,27 @@ button {
     border-radius: 2em;
     font-weight: 800;
     transition: all 0.2s;
+}
+
+/* cursor changes when hovering over button */
+button:hover {
+    cursor: pointer;
+  }
+
+.black {
+    background: black;
+    color: white;
+}
+
+
+/* random button */
+.random {
+    background: linear-gradient(0.25turn, #7dfa43, #71e2f8, #f63c64);
+  }
+  .random:hover {
+    background: linear-gradient(0.25turn, #f7e92f, #5f62fa, #cc03c2);
+  }
+
+.textbox {
+    margin-bottom: 5px;
 }
